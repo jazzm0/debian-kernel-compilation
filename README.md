@@ -53,7 +53,8 @@ mokutil --list-enrolled
 ./sign.sh /boot/vmlinuz-5.15.15. /boot/vmlinuz-5.15.15.signed
 ```
 
-* Update grub and reboot:
+* Copy initrd to signed initrd, Update grub and reboot:
 ```bash
+cp /boot/initrd.img-5.15.16 /boot/initrd.img-5.15.16.signed
 update-grub &&  reboot
 ```
