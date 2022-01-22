@@ -3,7 +3,7 @@
 based on https://askubuntu.com/questions/1081472/vmlinuz-4-18-12-041812-generic-has-invalid-signature
 
 ```bash
-apt install cpuinfo build-essential make gcc bc kmod cpio flex libncurses5-dev libelf-dev libssl-dev dwarve bison rsync sbsigntool
+apt install cpuinfo build-essential make gcc bc kmod cpio flex libncurses5-dev libelf-dev libssl-dev bison rsync sbsigntool
 cd /usr/src/
 wget -c https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.15.16.tar.xz
 tar xf linux-5.15.16.tar.xz
