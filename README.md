@@ -50,7 +50,7 @@ mokutil --list-enrolled
 
 * Then we can sign the freshly compiled kernel:
 ```bash
-./sign.sh /boot/vmlinuz-5.15.15. /boot/vmlinuz-5.15.15.signed
+./sign.sh /boot/vmlinuz-5.15.15 /boot/vmlinuz-5.15.15.signed
 ```
 
 * Copy initrd to signed initrd, Update grub and reboot:
