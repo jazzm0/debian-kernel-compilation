@@ -9,12 +9,12 @@ string_mask             = utf8only
 prompt                  = no
 
 [ req_distinguished_name ]
-countryName             = <YOURcountrycode>
-stateOrProvinceName     = <YOURstate>
-localityName            = <YOURcity>
-0.organizationName      = <YOURorganization>
-commonName              = Secure Boot Signing Key
-emailAddress            = <YOURemail>
+countryName             = DE
+stateOrProvinceName     = BW
+localityName            = walldorf
+0.organizationName      = github.com
+commonName              = linux signing key
+emailAddress            = tibor.tarnai@gmail.com
 
 [ v3 ]
 subjectKeyIdentifier    = hash
