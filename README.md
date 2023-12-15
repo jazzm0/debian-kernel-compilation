@@ -3,14 +3,14 @@
 based on https://askubuntu.com/questions/1081472/vmlinuz-4-18-12-041812-generic-has-invalid-signature
 
 ```bash
-apt install cpuinfo build-essential make gcc bc kmod cpio flex libncurses5-dev libelf-dev libssl-dev dwarve bison rsync sbsigntool
+apt install cpuinfo build-essential make gcc bc kmod cpio flex libncurses5-dev libelf-dev libssl-dev dwarve bison rsync sbsigntool debhelper
 cd /usr/src/
-wget -c https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.15.16.tar.xz
-tar xf linux-5.15.16.tar.xz
+wget -c https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.7.tar.xz
+tar xf linux*.xz
 rm linux
-ln -s linux-5.15.16 linux
+ln -s linux-6.6.7 linux
 cd linux
-cp /boot/config-5.15.15 .config
+cp /boot/config-6.6.7 .config
 make oldconfig
 nice make -j`nproc` bindeb-pkg
 ```
@@ -50,7 +50,8 @@ mokutil --list-enrolled
 
 * Then we can sign the freshly compiled kernel:
 ```bash
-./sign.sh /boot/vmlinuz-5.15.15 /boot/vmlinuz-5.15.15
+<<<<<<< HEAD
+./sign.sh /boot/vmlinuz-6.6.7
 ```
 
 * Update grub and reboot:
