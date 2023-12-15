@@ -26,6 +26,7 @@ openssl req -config ./mokconfig.cnf \
 ```
 
 * followed by:
+
 ```bash
 openssl x509 -in MOK.der -inform DER -outform PEM -out MOK.pem
 ```
@@ -39,22 +40,28 @@ MOK.priv
 ```
 
 then we need to enroll the keys:
+
 ```bash
 mokutil --import MOK.der
 ```
-* Restart your system. You will encounter a blue screen of a tool called MOKManager. Select "Enroll MOK" and then "View key". Make sure it is your key you created in step 2. Afterwards continue the process and you must enter the password which you provided in step 4. Continue with booting your system.
+
+* Restart your system. You will encounter a blue screen of a tool called MOKManager. Select "Enroll MOK" and then "View
+  key". Make sure it is your key you created in step 2. Afterwards continue the process and you must enter the password
+  which you provided in step 4. Continue with booting your system.
 * Verify your key is enrolled via:
+
 ```bash
 mokutil --list-enrolled
 ```
 
 * Then we can sign the freshly compiled kernel:
+
 ```bash
-<<<<<<< HEAD
 ./sign.sh /boot/vmlinuz-6.6.7
 ```
 
 * Update grub and reboot:
+
 ```bash
 update-grub &&  reboot
 ```
